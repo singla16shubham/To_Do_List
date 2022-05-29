@@ -1,0 +1,97 @@
+
+  *{
+    margin-bottom: 8px;
+}
+a{
+    text-decoration: none;
+}
+body{
+   
+    font-family:  "Gill Sans Extrabold" sans-serif;
+    margin: 0;
+    background-position: center;
+    width: 100%;
+    height: 50vh;
+    
+    
+}
+  
+.heading{
+  color: black;
+  margin:20px;
+  text-align: center;
+}
+
+.card{
+   padding: 7px;
+   border: none;
+   background-color: azure;
+}
+
+
+.category-card{
+   display: inline-block;
+   width: 47%;
+   
+   position: relative;
+}
+
+.due-date-card{
+   display: inline-block;
+   width: 48%;
+   position: relative;
+   text-align: right;
+}
+
+
+#container{
+   margin-left: 30%;
+   width: 45%;
+   
+}
+
+.action-button-container{
+   margin: 20px 0;
+   position: relative;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   text-align: center;
+   flex-wrap: wrap;
+}
+
+.task-card{
+   display: inline-flex;
+   flex-direction: row;
+   width: 100%;
+}
+
+.tick-box{
+   width: 8%;
+   size: 1.5rem;
+   text-align: center;
+   vertical-align: middle;
+   padding-top: 5%;
+}
+
+.tag-box{
+   width: 40%;
+}
+
+input.select-task{
+   height: 20px;
+   width: 25px;
+}
+
+.task-body{
+   width: 90%;
+}
+#delete{
+   width:40%;
+   
+   margin-top: 2px;
+   margin-left: 2px;
+}
+.task-delete{
+   height:20%;
+}

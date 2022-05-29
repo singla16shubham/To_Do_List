@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Todo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Ubuntu:ital@1&display=swap"
+        rel="stylesheet">
+
+    <!-- bootstrap cdn -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- fontsawesome cdn -->
+    <script src="https://kit.fontawesome.com/c035598f8c.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <h1 class="heading">ToDO List App</h1>
+    <div id="container">
+
+        <form action="/create-task" method="POST">
+            <div class="card">
+                <h6 class="card-subtitle mb-2 text-muted">TITLE</h6>
+                <input type="text" name="taskName" class="form-control" placeholder="What's the title ?" required>
+            </div>
+
+            <!-- div for adding description of the task -->
+            <div class="card">
+                <h6 class="card-subtitle mb-2 text-muted">DESCRIPTION</h6>
+                <textarea class="form-control" name="description" placeholder="Write description here"
+                    required></textarea>
+            </div>
+
+            <!-- this div is for category and due-date heading -->
+            <div>
+
+                <div class="category-card">
+                    <span class="text-muted">CATEGORY</span>
+                </div>
+
+                <div class="due-date-card">
+                    <span class="text-muted">DUE-DATE</span>
+                </div>
+
+            </div>
+
+            <!-- this div is for drop down list of category and due date input -->
+            <div>
+
+                <div class="category-card">
+                    <select class="custom-select" name="category">
+                        <option value="Personal">Personal</option>
+                        <option value="Professional">Professional</option>
+                        <option value="Academics">Academics</option>
+                        <option value="Social">Social</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="due-date-card">
+                    <input type="Date" name="Date" required>
+                </div>
+
+            </div>
+            <div class="action-button-container">
+                <button type="submit" class="btn btn-success btn-lg">
+                    <i class="fas fa-plus"></i> Add Task</button>
+            </div>
+        </form>
+
+
+
+    <!-- <span id="total-tasks">Total tasks: <span id="task-counter">0</span> </span> -->
+        <ul id="list">
+            <% for(let i of task_list){%>
+                <li>
+                    <div class="card task-card">
+                        <div class="tick-box">
+                            <input type="checkbox" class="select-task" id="checkbox" name="<%= i._id%>">
+                        </div>
+
+                        <div class="card-body task-body">
+                            <h5 class="card-title ">
+                                <%= i.taskName %>
+                            </h5>
+                            <p class="text-muted">
+                                <%= i.description %>
+                            </p>
+                            <p class="text-muted"><i class="far fa-calendar-alt"></i>
+                                <%= i.Date %>
+                            </p>
+                        </div>
+
+                        <div class="tag-box">
+                            <% if(i.category=='Personal' )
+                                { %>
+                                <h4><span class="badge badge-info">
+                                        <%= i.category %>
+                                    </span></h4>
+                                <%}
+                             %>
+
+                            <% if(i.category=='Professional' )
+                                {%>
+                                <h4><span class="badge badge-success">
+                                        <%= i.category %>
+                                    </span></h4>
+                                <% }%>
+
+                            <% if(i.category=='Academics' ) 
+                                {%>
+                                    <h4><span class="badge badge-primary">
+                                            <%= i.category %>
+                                        </span></h4>
+                                    <%}
+                                %>
+
+                            <% if(i.cateory=='Social' ) 
+                                {%>
+                                        <h4><span class="badge badge-dark">
+                                        <%= i.category %>
+                                            </span>
+                                    </h4>
+                                <%}
+                            %>
+
+                            <% if(i.category=='Other' )
+                                {%>
+                                        <h4><span class="badge badge-default">
+                                                <%= i.category %>
+                                            </span>
+                                        </h4>   
+                                        
+                                <%}
+                            %>
+
+
+                        </div>
+                        <div id="delete">
+                            <a href="/delete-task/?id=<%= i._id%>">
+                                <button class="task-delete btn btn-danger btn-sm" type="submit">
+                                    <i class="fas fa-trash-alt"></i> Delete Task </button>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+
+                <%} %>
+        </ul>
+    </div>
+
+
+
+    <!-- <script src="/js/script.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
