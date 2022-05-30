@@ -12,14 +12,13 @@
 - An form is present which will take the data like title and description of task.
 - Then there is category and due-date. All these are styled with the css file
 - For category card select tag is used
-- then there is submit button. In the form action /create-task is written.
-- So that when submit button is pressed then it will do whatever iss written in /create-task.
-After that All the tasks are shown below.
-- Each task has delete button associated with it.
-- This delete button works just like add task
-Only differece is that it is an link when pressed it will take to the /delete-task.
-- But here id is specified So that with use of this id task can be deleted from the database.
+- Then there is submit button. In the form action /create-task is written.
+- So that when submit button is pressed then it will do whatever is written in /create-task.
+- There is a Delete button also
+- This delete button works just like add task.
+Only differece is that you have to click on checkbox whichever task you want to delete.
 
+After that All the tasks are shown below.
 ## Important
 - Mongoose will create the databse with the name final_todolistapp
 - Robo3T is sued to visualise the database.

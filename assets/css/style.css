@@ -12,12 +12,13 @@ body{
     background-position: center;
     width: 100%;
     height: 50vh;
+    background-image: url("cool-background.png");
     
     
 }
   
 .heading{
-  color: black;
+  color: #6A67CE;
   margin:20px;
   text-align: center;
 }

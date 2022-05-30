@@ -59,24 +59,31 @@ TaskList.create(req.body,function(err,task){
 });
 })
 
-app.get('/delete-task/',function(req,res){
+app.get('/delete-task',function(req,res){
 //     let taskName=req.query.taskName;
 //    tasklist= tasklist.filter(function(task){
 //        return task.taskName!=taskName;
 //    })
 //    return res.redirect('/');
-let id=req.query.id;
-console.log(id);
-TaskList.findByIdAndDelete(id,function(err){
+console.log(req.query);
+let id=req.query;
+let checkboxlength=Object.keys(id).length;
+console.log(checkboxlength);
+// console.log(id);
+for(let i=0;i<checkboxlength;i++)
+{
+TaskList.findByIdAndDelete(Object.keys(id)[i],function(err){
     if(err){
         console.log("Error");
         return;
     }
-   
-    return res.redirect('/');
+    // else
+    //  { return res.redirect('back');}
+})
+}
+return res.redirect('back');
 })
 
-})
 
 app.listen(port,function(err)
 {
