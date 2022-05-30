@@ -21,7 +21,7 @@ Only differece is that you have to click on checkbox whichever task you want to 
 After that All the tasks are shown below.
 ## Important
 - Mongoose will create the databse with the name final_todolistapp
-- Robo3T is sued to visualise the database.
+- Studio3T is sued to visualise the database.
 ### Folder Description
 - Varoius folders are created so that there is less confusion
 - config contains mongoose.js
