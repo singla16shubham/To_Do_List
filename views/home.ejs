@@ -27,13 +27,13 @@
 
         <form action="/create-task" method="POST">
             <div class="card">
-                <h6 class="card-subtitle mb-2 text-muted">TITLE</h6>
+                <h6 class="card-subtitle mb-2 text-dark">TITLE</h6>
                 <input type="text" name="taskName" class="form-control" placeholder="What's the title ?" required>
             </div>
 
             <!-- div for adding description of the task -->
             <div class="card">
-                <h6 class="card-subtitle mb-2 text-muted">DESCRIPTION</h6>
+                <h6 class="card-subtitle mb-2 text-dark">DESCRIPTION</h6>
                 <textarea class="form-control" name="description" placeholder="Write description here"
                     required></textarea>
             </div>
@@ -42,11 +42,11 @@
             <div>
 
                 <div class="category-card">
-                    <span class="text-muted">CATEGORY</span>
+                    <span class="text-white">CATEGORY</span>
                 </div>
 
                 <div class="due-date-card">
-                    <span class="text-muted">DUE-DATE</span>
+                    <span class="text-white">DUE-DATE</span>
                 </div>
 
             </div>
@@ -72,10 +72,15 @@
             <div class="action-button-container">
                 <button type="submit" class="btn btn-success btn-lg">
                     <i class="fas fa-plus"></i> Add Task</button>
-            </div>
+                    
+           
         </form>
-
-
+     
+     <form action="/delete-task" method="get" class="aform">
+                <button class="btn btn-danger btn-lg" type="submit">
+                    <i class="fas fa-trash-alt"></i> Delete Task </button>
+             </div>
+            <!-- This above dic is the ending of the div of action-button-container -->
 
     <!-- <span id="total-tasks">Total tasks: <span id="task-counter">0</span> </span> -->
         <ul id="list">
@@ -143,18 +148,14 @@
 
 
                         </div>
-                        <div id="delete">
-                            <a href="/delete-task/?id=<%= i._id%>">
-                                <button class="task-delete btn btn-danger btn-sm" type="submit">
-                                    <i class="fas fa-trash-alt"></i> Delete Task </button>
-                            </a>
-                        </div>
+                      
                     </div>
                 </li>
 
                 <%} %>
         </ul>
     </div>
+    </form>
 
 
 
