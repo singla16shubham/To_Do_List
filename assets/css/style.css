@@ -2,9 +2,7 @@
   *{
     margin-bottom: 8px;
 }
-a{
-    text-decoration: none;
-}
+
 body{
    
     font-family:  "Gill Sans Extrabold" sans-serif;
@@ -86,13 +84,4 @@ input.select-task{
 
 .task-body{
    width: 90%;
-}
-#delete{
-   width:40%;
-   
-   margin-top: 2px;
-   margin-left: 2px;
-}
-.task-delete{
-   height:20%;
 }
