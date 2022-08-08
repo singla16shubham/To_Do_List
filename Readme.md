@@ -1,4 +1,5 @@
 # TO-DO-List 
+   ![To-Do-App](assets/To_do_list.png)
  ## Port is created at 8000
 ## Index File
 - Path and Db is set up for use
